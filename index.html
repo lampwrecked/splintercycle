@@ -221,20 +221,16 @@
   .media-16-9 { aspect-ratio: 16 / 9; }
 
   .media-caption {
-    position: absolute;
-    left: 12px;
-    bottom: 12px;
-    z-index: 2;
+    display: block;
+    margin-top: 10px;
     font-family: var(--mono);
-    font-size: 9.5px;
-    letter-spacing: 0.18em;
+    font-size: 10px;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--fg);
-    background: rgba(8, 8, 8, 0.7);
-    padding: 5px 9px;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    color: var(--fg-dim);
   }
+  .media-caption .idx { color: var(--fg-faint); margin-right: 8px; }
+  .fig { margin: 0; display: block; }
 
   /* chapter layouts */
   .layout {
@@ -377,8 +373,18 @@
     font-style: italic;
     font-weight: 400;
     font-size: clamp(24px, 3.4vw, 40px);
-    line-height: 1.05;
+    line-height: 1.15;
     color: var(--fg);
+  }
+  .ex-kind {
+    display: block;
+    font-family: var(--mono);
+    font-style: normal;
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+    margin-top: 6px;
   }
   .ex-meta {
     font-family: var(--mono);
@@ -485,8 +491,8 @@
     <div class="content single">
       <div class="media media-4-5">
         <img src="media/01-sculpture.jpg" alt="Broken glass sculpture &mdash; still photograph" loading="lazy" />
-        <span class="media-caption">01 &middot; Sculpture &middot; Still</span>
       </div>
+      <span class="media-caption"><span class="idx">01</span>Sculpture &middot; Still</span>
       <p class="step-note">A broken glass sculpture, photographed.</p>
     </div>
   </div>
@@ -503,8 +509,8 @@
     <div class="content single">
       <div class="media media-4-5">
         <video src="media/02-scan.mp4" autoplay muted loop playsinline preload="metadata"></video>
-        <span class="media-caption">02 &middot; 3D Scan &middot; Video</span>
       </div>
+      <span class="media-caption"><span class="idx">02</span>3D Scan &middot; Video</span>
       <p class="step-note">Photogrammetric capture &mdash; the object reborn as mesh.</p>
     </div>
   </div>
@@ -521,8 +527,8 @@
     <div class="content single-tall">
       <div class="media media-9-16">
         <video src="media/03-manipulation.mp4" autoplay muted loop playsinline preload="metadata"></video>
-        <span class="media-caption">03 &middot; 3D Manipulation &middot; Video</span>
       </div>
+      <span class="media-caption"><span class="idx">03</span>3D Manipulation &middot; Video</span>
       <p class="step-note">Mesh dragged, folded, fractured further in software.</p>
     </div>
   </div>
@@ -532,19 +538,23 @@
 <section class="chapter" id="project">
   <div class="chapter-head">
     <span class="chapter-num">04 &nbsp;/&nbsp; Project</span>
-    <h2 class="chapter-title">Light through glass.</h2>
+    <h2 class="chapter-title">Light from form.</h2>
   </div>
   <div class="layout">
     <span class="gutter"></span>
     <div class="content pair">
-      <div class="media media-16-9">
-        <video src="media/04a-projected-form.mp4" autoplay muted loop playsinline preload="metadata"></video>
-        <span class="media-caption">04a &middot; Projected Form</span>
-      </div>
-      <div class="media media-16-9">
-        <video src="media/04b-projected-form.mp4" autoplay muted loop playsinline preload="metadata"></video>
-        <span class="media-caption">04b &middot; Projected Form</span>
-      </div>
+      <figure class="fig">
+        <div class="media media-16-9">
+          <video src="media/04a-projected-form.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        </div>
+        <figcaption class="media-caption"><span class="idx">04a</span>Projected Form</figcaption>
+      </figure>
+      <figure class="fig">
+        <div class="media media-16-9">
+          <video src="media/04b-projected-form.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        </div>
+        <figcaption class="media-caption"><span class="idx">04b</span>Projected Form</figcaption>
+      </figure>
     </div>
     <p class="step-note">The distorted scan returned to light &mdash; two studies.</p>
   </div>
@@ -561,8 +571,8 @@
     <div class="content single-wide">
       <div class="media media-16-9">
         <video src="media/05-projection-on-sculpture.mp4" autoplay muted loop playsinline preload="metadata"></video>
-        <span class="media-caption">05 &middot; Projection on Sculpture</span>
       </div>
+      <span class="media-caption"><span class="idx">05</span>Projection on Sculpture</span>
       <p class="step-note">The data double cast back onto the artifact it came from.</p>
     </div>
   </div>
@@ -585,21 +595,21 @@
     <ul class="exhibitions-list">
       <li>
         <span class="ex-date">Nov 2025</span>
-        <span class="ex-name">Return to Form</span>
+        <span class="ex-name">Return to Form <span class="ex-kind">Group Exhibition</span></span>
         <span class="ex-meta">Burrito DAO &middot; Luma Studios &mdash; Manhattan, NY</span>
       </li>
       <li>
-        <span class="ex-date">Dec 2026</span>
-        <span class="ex-name">One Love</span>
-        <span class="ex-meta">Community Showcase &middot; Miami Art Week &mdash; Miami, FL</span>
+        <span class="ex-date">Dec 2025</span>
+        <span class="ex-name">Listen to Your Heart <span class="ex-kind">Group Exhibition</span></span>
+        <span class="ex-meta">One Love DAO &middot; Miami Art Week &mdash; Miami, FL</span>
       </li>
     </ul>
     <div class="ex-doc">
       <div class="media media-16-9">
         <video src="media/06-artweek-feature.mp4" autoplay muted loop playsinline preload="metadata"></video>
-        <span class="media-caption">06 &middot; Installation View &middot; Miami Art Week</span>
       </div>
-      <p class="step-note">Featured at One Love &mdash; Miami Art Week, December 2026.</p>
+      <span class="media-caption"><span class="idx">06</span>Installation View &middot; Miami Art Week</span>
+      <p class="step-note">Seen in One Love DAO Community Showcase, December 2025.</p>
     </div>
   </div>
 </section>
